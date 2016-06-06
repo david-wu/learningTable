@@ -1,0 +1,62 @@
+
+periodic-table{
+
+	.element{
+		cursor: pointer;
+		outline: 1px solid black;
+		height: 125px;
+		width: 100px;
+		position: relative;
+		justify-content: center;
+
+		.tag{
+			font-size: 42px;
+			font-weight: bold;
+			position:absolute;
+			top:45%;
+			left:50%;
+			transform: translate(-50%, -50%);
+		}
+		.name{
+			width:100%;
+			position: absolute;
+			bottom: 0;
+			left:50%;
+			transform: translate(-25%, 0);
+			font-weight: 100;
+			font-size: 12px;
+		}
+		&.selected{
+			opacity: 0.3;
+			&:hover{
+				opacity: 0.3;
+			}
+		}
+		&:hover{
+			opacity:0.85;
+		}
+	}
+
+	.space-types{
+		background-color: #f58e8e;
+	}
+	.psychological{
+		background-color: #b4c470;
+	}
+
+	.spacial{
+		background-color: #6ec7b2;
+	}
+
+	.pheno{
+		background-color: #f9daa1;
+	}
+
+	.modalities{
+		background-color: #f9daa1;
+	}
+
+	.intelligence{
+		background-color: #8cceac;
+	}
+}

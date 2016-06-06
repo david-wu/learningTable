@@ -1,0 +1,28 @@
+
+<div class="flex justify-center">
+	<h1>Periodic Table of Learning</h1>
+</div>
+
+<div class="flex">
+	<div ng-repeat="group in groups" class="flex">
+
+		<div class="flex column align-center">
+			<div style="font-size:24px; padding-bottom: 20px;">
+				{{group.name}}
+			</div>
+			<div class="flex">
+				<div class="flex column" ng-repeat="column in group.columns">
+					<div
+						ng-repeat="item in column"
+						class="element flex column align-center {{group.class}}"
+						ng-class="{selected: item.selected}"
+						ng-click="item.selected=!item.selected"
+					>
+						<div class="tag">{{item.tag}}</div>
+						<div class="name">{{item.name}}</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
