@@ -5,17 +5,13 @@ angular.module('app')
 
 function PeriodicTable(){
     return {
-        scope: {
-            address: '=?',
-        },
+        scope: {},
         templateUrl: 'periodicTable/periodicTable.tpl.html',
         link: linkFunc.bind(null),
     };
 }
 
 function linkFunc(scope, element, attrs){
-
-
 
     scope.groups = [
         {
@@ -410,7 +406,7 @@ function linkFunc(scope, element, attrs){
                     },
                     {
                         tag: 'In',
-                        name: 'Interpsersonal',
+                        name: 'Interpersonal',
                     },
                     {
                         tag: 'It',
@@ -423,5 +419,5 @@ function linkFunc(scope, element, attrs){
                 ],
             ]
         }
-    ]
+    ];
 }

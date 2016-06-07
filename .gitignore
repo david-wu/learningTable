@@ -34,5 +34,4 @@ node_modules
 
 .tmp
 build
-lib
 .DS_Store
