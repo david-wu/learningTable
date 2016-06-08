@@ -1,6 +1,15 @@
 
 periodic-table{
 
+	button{
+		margin:10px;
+		padding:10px;
+	}
+
+	.margin-left{
+		margin-left: 30px;
+	}
+
 	.group{
 		padding-top: 30pxx;
 	}
@@ -45,18 +54,23 @@ periodic-table{
 
 	@mixin background-opacity($color) {
 
-	    background-color: rgba($color, 0.3);
+		background-color: $color;
+		opacity: 0.3;
+	    // background-color: rgba($color, 0.3);
 
 	    &:hover{
-	    	background-color: rgba($color, 0.5);
+	    	opacity: 0.5;
+	    	// background-color: rgba($color, 0.5);
 	    }
 
 	    &.selected{
-	    	background-color: rgba($color, 1);
+	    	opacity: 1;
+	    	// background-color: rgba($color, 1);
 	    }
 
 	    &.selected:hover{
-	    	background-color: rgba($color, 0.8);
+	    	opacity: 0.8;
+	    	// background-color: rgba($color, 0.8);
 	    }
 
 	}

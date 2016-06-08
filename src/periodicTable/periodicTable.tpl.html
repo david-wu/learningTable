@@ -3,21 +3,41 @@
 	<h1>Periodic Table of Learning</h1>
 </div>
 
-<div class="flex wrap justify-center">
-	<div ng-repeat="group in groups" class="flex column align-center group">
-		<div class="group-header">{{group.name}}</div>
-		<div class="flex columns">
-			<div ng-repeat="column in group.columns" class="flex column table-column">
-				<div
-					ng-repeat="item in column"
-					class="element align-center {{group.class}}"
-					ng-class="{selected: item.selected}"
-					ng-click="item.selected=!item.selected"
-				>
-					<div class="tag">{{item.tag}}</div>
-					<div class="name">{{item.name}}</div>
+<div class="flex">
+
+	<div class="flex column" style="padding:10px; margin: 10px;">
+
+		<button ng-click="reset()">Clear</button>
+		<button ng-click="saveTo('setting1')">Set setting 1</button>
+		<button ng-disabled="!settings['setting1']" ng-click="load('setting1')">Load setting 1</button>
+
+		<button ng-click="saveTo('setting2')">Set setting 2</button>
+		<button ng-disabled="!settings['setting2']" ng-click="load('setting2')">Load setting 2</button>
+
+		<button ng-click="saveTo('setting3')">Set setting 3</button>
+		<button ng-disabled="!settings['setting3']" ng-click="load('setting3')">Load setting 3</button>
+
+	</div>
+
+
+	<div class="flex">
+		<div ng-repeat="group in groups" class="flex column align-center group {{group.spaced ? 'margin-left': ''}}">
+			<div class="group-header">{{group.name}}</div>
+			<div class="flex columns">
+				<div ng-repeat="column in group.columns" class="flex column table-column">
+					<div
+						ng-repeat="item in column"
+						class="element align-center {{group.class}}"
+						ng-class="{selected: item.selected}"
+						ng-click="item.selected=!item.selected"
+					>
+						<div class="tag">{{item.tag}}</div>
+						<div class="name">{{item.name}}</div>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+
 </div>
+
