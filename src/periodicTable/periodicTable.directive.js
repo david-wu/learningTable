@@ -48,7 +48,6 @@ function linkFunc(scope, element, attrs){
     scope.reset();
 }
 
-
 var defaultGroups = [
     {
         name: 'Space Types',

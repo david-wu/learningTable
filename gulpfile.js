@@ -10,6 +10,7 @@ var browserify = require('gulp-browserify');
 var babel = require('gulp-babel');
 var ngAnnotate = require('gulp-ng-annotate');
 var jshint = require('gulp-jshint');
+var clipper = require('gulp-clipper');
 
 var config = {
     src: './src',
@@ -48,7 +49,7 @@ gulp.task('sass', function () {
     .pipe(gulp.dest(config.build));
 });
 
-gulp.task('js', ['templateCache', 'lib'], function(){
+gulp.task('js', ['templateCache', 'lib', 'gulpClips'], function(){
     return gulp.src([config.src+'/**/*.module.js', config.tmp+'/**/*.js', config.src+'/**/*.js'])
         .pipe(sourcemaps.init())
         .pipe(ngAnnotate())
@@ -60,6 +61,12 @@ gulp.task('js', ['templateCache', 'lib'], function(){
         }))
         .pipe(sourcemaps.write())
         .pipe(gulp.dest(config.build));
+});
+
+gulp.task('gulpClips', function(){
+    gulp.src([config.src+'/**/*.*'])
+        .pipe(clipper('gulpClips.js'))
+        .pipe(gulp.dest(config.tmp))
 });
 
 gulp.task('templateCache', function(){
